@@ -1,0 +1,36 @@
+<article class="coffee-card">
+    <span class="coffee-card__popular" *ngIf="card.popular">
+        Popular
+    </span>
+    <img [src]="card.image" class="coffee-card__image" alt="">
+    <div class="coffee-card__info">
+        <div class="coffee-card__info-header">
+            <h3 class="coffee-card__name">
+                {{card.name}}
+            </h3>
+            <span class="coffee-card__price" *ngIf="card.price">
+                {{ card.price }}
+            </span>
+        </div>
+        <div class="coffee-card__info-qualification">
+            <div class="coffee-card__info-star">
+                <img class="coffee-card__rating-image"
+                    src="{{ card.rating ? 'assets/images/star_fill.svg' : 'assets/images/star.svg'}}" alt="">
+                <span *ngIf="card.rating" class="coffee-card__info-rating">
+                    {{card.rating}}
+                </span>
+                <span class="coffee-card__info-votes">
+                    <ng-container *ngIf="card.votes; else noRatings">
+                        ({{card.votes}} votes)
+                    </ng-container>
+                    <ng-template #noRatings>
+                        No ratings
+                    </ng-template>
+                </span>
+            </div>
+            <span *ngIf="!card.available" class="coffee-card__info-soldout">
+                Sold out
+            </span>
+        </div>
+    </div>
+</article>

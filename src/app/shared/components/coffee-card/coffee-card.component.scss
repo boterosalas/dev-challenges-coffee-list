@@ -1,0 +1,85 @@
+@import 'variables';
+
+.coffee-card {
+    width: 256px;
+    position: relative;
+
+    .coffee-card__popular {
+        font-family: $font-dm-sans;
+        color: $black;
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: 12px;
+        background-color: $mustard;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        font-weight: 700px;
+    }
+
+    .coffee-card__image {
+        border-radius: 12px;
+        height: 160px;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 16px;
+    }
+
+    .coffee-card__info {
+
+        .coffee-card__info-header {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 10px;
+
+            .coffee-card__name {
+                color: #FFFFFF;
+                font-family: $font-dm-sans;
+                font-size: 16px;
+                font-weight: bold;
+                margin: 0px;
+            }
+
+            .coffee-card__price {
+                padding: 4px 8px;
+                border-radius: 6px;
+                font-size: 12px;
+                font-family: $font-dm-sans;
+                font-weight: bold;
+                color: $black;
+                background-color: $lightGreen;
+            }
+        }
+
+        .coffee-card__info-qualification {
+            font-size: 14px;
+            font-family: $font-dm-sans;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 6px;
+
+            .coffee-card__info-star {
+                .coffee-card__rating-image {
+                    vertical-align: bottom;
+                }
+
+                .coffee-card__info-rating {
+                    color: #FFFFFF;
+                }
+
+                .coffee-card__info-votes {
+                    color: $lightGrey;
+                }
+            }
+
+            .coffee-card__info-soldout {
+                color: $salmon;
+                margin-top: 6px;
+            }
+        }
+    }
+}

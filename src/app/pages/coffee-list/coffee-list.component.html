@@ -1,0 +1,29 @@
+<section class="coffee-list">
+    <img src="assets/images/bg-cafe.jpg" class="coffee-list__image-header" alt="">
+    <div class="coffee-page">
+        <header class="coffee-page__header">
+            <h1 class="coffee-page__title">
+                Our Collection
+            </h1>
+            <p class="coffee-page__description">
+                Introducing our Coffee Collection, a selection of unique coffees from different roast types and origins,
+                expertly roasted in small batches and shipped fresh weekly.
+            </p>
+        </header>
+        <div class="coffee-page__filter-group">
+            <button class="coffee-page__filter-button" [ngClass]="{'active':activeFilter === filter.value}"
+                *ngFor="let filter of filters" (click)="changeFilter(filter.value)">
+                {{ filter.label }}
+            </button>
+        </div>
+        <div class="coffee-page__list">
+            <ng-container *ngIf="isLoading; else noloadingTemplate">
+                <div class="loading loading-card" *ngFor="let item of [].constructor(6)"></div>
+            </ng-container>
+            <ng-template #noloadingTemplate>
+                <app-coffee-card *ngFor="let card of coffeeListFiltered" [card]="card"
+                    class="app-coffee-card"></app-coffee-card>
+            </ng-template>
+        </div>
+    </div>
+</section>

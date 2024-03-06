@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "coffe-list": {
+    "coffee-list": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/coffe-list",
+            "outputPath": "dist/coffee-list",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -32,6 +32,12 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                ".",
+                "src/assets/styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -65,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "coffe-list:build:production"
+              "browserTarget": "coffee-list:build:production"
             },
             "development": {
-              "browserTarget": "coffe-list:build:development"
+              "browserTarget": "coffee-list:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "coffe-list:build"
+            "browserTarget": "coffee-list:build"
           }
         },
         "test": {
